@@ -1,8 +1,21 @@
 
 const reverseSentence = (sentence, reverseWords, reverseLetters) => {
 
-  // This is where the logic goes, current implementation doesn't pass all tests!
-  return sentence;
+  let words = sentence.split(' ');
+
+  if(reverseLetters) {
+    words = words.map( (word) => reverse(word, ''));
+  }
+
+  if(reverseWords) {
+    words = words.reverse();
+  }
+
+  return words.join(' ');
+}
+
+const reverse = (arr, splitChar) => {
+  return arr.split(splitChar).reverse().join(splitChar);
 }
 
 module.exports =
